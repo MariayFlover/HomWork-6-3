@@ -32,20 +32,11 @@ Console.Write($"{num2}  чисел больше 0:");
 // заданных уравнениями y = k1 * x + b1, y = k2 * x + b2; значения b1, k1, b2 и k2 задаются пользователем.
 //   b1 = 2, k1 = 5, b2 = 4, k2 = 9 -> (-0,5; 5,5)
 
-void Tochka (int b1, int k1, int b2, int k2)
+double Tochka (int b1, int k1, int b2, int k2)
 {
-   int x = 0;
-   int y = 0;
    
-   // x = (b2 - b1) / (k1 - k2)+b1;
-   // y = k1 * (b2 - b1) / (k1 - k2) + b1;
-
-   x = k1 * x + b1;
-   y = k2 * x + b2;
-
-   {
-      Console.WriteLine($"({x};{y})");
-   }
+  double x = (b2 - b1) / (k1 - k2);
+  double y = k1 + (b2 - b1) / (k1 - k2) + b1;
    
 }
 Console.Write("Input coordinates b1: ");
@@ -59,6 +50,5 @@ int k1=Convert.ToInt32(Console.ReadLine());
 
 Console.Write("Input coordinates k2: ");
 int k2=Convert.ToInt32(Console.ReadLine());
-
-Tochka(b1, k1, b2, k2);
-
+double xy = Tochka(b1, k1, b2, k2);
+Console.WriteLine(xy);
